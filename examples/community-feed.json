@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "updatedAt": "2026-11-07",
+  "communities": [
+    {"id":"vancouver","city":"Vancouver","country":"Canada","region":"British Columbia","label":"AWS Vancouver","tagline":"A community of cloud builders in Vancouver.","website":"https://vancouver.awsday.ca","color":"#BDEAF7"}
+  ],
+  "events": [
+    {"id":"vancouver-monthly","communityId":"vancouver","kind":"meetup","title":"AWS Vancouver monthly meetup","summary":"Monthly community talks and networking.","dateISO":null,"dateLabel":"Next date to be announced","venue":"Vancouver, BC","registrationUrl":null}
+  ]
+}
