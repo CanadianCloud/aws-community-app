@@ -1,6 +1,6 @@
 import {createHash} from 'node:crypto';
 export const overrides={vancouver:'https://vancouver.awsday.ca',toronto:'https://toronto.awsday.ca',victoria:'https://victoria.awsday.ca'};
-const nameKey=value=>value.normalize('NFKC').trim().toLowerCase().replace(/\s+/g,' ');
+const nameKey=value=>{const words=value.normalize('NFKC').toLowerCase().replace(/[^\p{L}\p{N}]+/gu,' ').trim().replace(/\s+/g,' ');const compact=words.replaceAll(' ','');for(const city of Object.keys(overrides)){if(compact==='awsusergroup'+city||compact===city+'awsusergroup')return 'aws user group '+city;}return words;};
 export function mergeDirectory(existing,incoming){
   const records=new Map(existing.map(group=>[nameKey(group.label),{...group}]));
   for(const group of incoming){
@@ -11,8 +11,9 @@ export function mergeDirectory(existing,incoming){
   }
   for(const [city,website] of Object.entries(overrides)){
     const matches=[...records.entries()].filter(([,group])=>(group.city.toLowerCase()===city&&group.country==='Canada')||group.id===city||nameKey(group.label)===`aws user group ${city}`);
-    if(matches.length){for(const [key,group] of matches)records.set(key,{...group,website});}
+    if(matches.length){for(const [key,group] of matches)records.set(key,{...group,...(key==='aws user group '+city?{id:city}:{}),website});}
     else records.set(`aws user group ${city}`,{id:city,city:city[0].toUpperCase()+city.slice(1),country:'Canada',region:'',label:`AWS User Group ${city[0].toUpperCase()+city.slice(1)}`,tagline:'',website,color:'#E2EDBF'});
   }
   return [...records.values()].sort((a,b)=>a.country.localeCompare(b.country)||a.city.localeCompare(b.city)||a.label.localeCompare(b.label));
 }
+
