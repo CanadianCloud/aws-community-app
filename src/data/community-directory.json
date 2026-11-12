@@ -1,16 +1,5 @@
 [
   {
-    "id": "directory-54ae9da64e8d",
-    "city": "",
-    "country": "",
-    "region": "",
-    "label": "AWS User Group - Bologna",
-    "tagline": "",
-    "website": "https://www.meetup.com/aws-user-group-/",
-    "color": "#E2EDBF",
-    "eventsConnected": false
-  },
-  {
     "id": "directory-412fc26b1b7d",
     "city": "",
     "country": "",
@@ -1140,16 +1129,6 @@
     "id": "directory-f214ac1544ff"
   },
   {
-    "id": "toronto",
-    "city": "Toronto",
-    "country": "Canada",
-    "region": "",
-    "label": "AWS User Group Toronto",
-    "tagline": "",
-    "website": "https://toronto.awsday.ca",
-    "color": "#E2EDBF"
-  },
-  {
     "region": "Ontario",
     "tagline": "",
     "color": "#E2EDBF",
@@ -1167,18 +1146,7 @@
     "website": "https://toronto.awsday.ca",
     "city": "Toronto",
     "country": "Canada",
-    "id": "directory-8c16b8a14923"
-  },
-  {
-    "id": "vancouver",
-    "city": "Vancouver",
-    "country": "Canada",
-    "region": "",
-    "label": "AWS User Group Vancouver",
-    "tagline": "",
-    "website": "https://vancouver.awsday.ca",
-    "color": "#E2EDBF",
-    "eventsConnected": false
+    "id": "toronto"
   },
   {
     "region": "British Columbia",
@@ -1188,7 +1156,7 @@
     "website": "https://vancouver.awsday.ca",
     "city": "Vancouver",
     "country": "Canada",
-    "id": "directory-38f26526c4d3"
+    "id": "vancouver"
   },
   {
     "id": "victoria",
